@@ -13,7 +13,11 @@ app.set("view engine", "ejs");
 const __dirname = path.resolve();
 app.set("views", path.join(__dirname, "views"));
 
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
+   res.render("index", {fact: "Waiting for facts..."} )
+});
+
+app.get("/fact", async (req, res) => {
   try {
     const response = await axios.get(url);
     const fact = response.data.fact;

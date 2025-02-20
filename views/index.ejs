@@ -8,6 +8,9 @@
 <body>
     <h1>Welcome to My Express App with EJS!</h1>
     <h3>Random Facts about the cat</h3>
+    <form action="/fact" method="GET">
+       <button type="submit">Get Fact</button>
+    </form>
     <p><%= fact %></p>
 </body>
 </html>
